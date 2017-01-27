@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(Patrick O'Doherty)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="author">Patrick O'Doherty</h2><p class="date">Created: 2017-01-26 Thu 20:16</p>
+</section>
+<section>
+<section id="slide-org9ab1b2b">
+<h2 id="org9ab1b2b">Coreboot and you</h2>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./coreboot.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgfbb17e6">
+<h2 id="orgfbb17e6">What</h2>
+<p>
+Coreboot (formerly LinuxBIOS) is a FOSS replacement for your BIOS/UEFI
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orga791570">
+<h2 id="orga791570">Why</h2>
+</section>
+</section>
+<section>
+<section id="slide-org8ee99c6">
+<h2 id="org8ee99c6">Security</h2>
+<div class="outline-text-2" id="text-org8ee99c6">
+</div></section>
+<section id="slide-org8b96f62">
+<h3 id="org8b96f62">Vendors suck at shipping security patches</h3>
+<p>
+layered vendor ecosystem makes this suck even more
+<img src="./vendors.jpg" alt="vendors.jpg" />
+</p>
+</section>
+<section id="slide-org4b1cf32">
+<h3 id="org4b1cf32">Your BIOS likely likely has unpatched exploits</h3>
+</section>
+<section id="slide-org6ce8c04">
+<h3 id="org6ce8c04">The trusted computing base is yuuuuuuuuuuuuge</h3>
+</section>
+</section>
+<section>
+<section id="slide-orgfc10000">
+<h2 id="orgfc10000">Flexibility!</h2>
+<div class="outline-text-2" id="text-orgfc10000">
+</div></section>
+<section id="slide-org0a85f30">
+<h3 id="org0a85f30">Ever wanted to yak shave your BIOS??!? Now you can!!!</h3>
+
+<div class="figure">
+<p><img src="./yak-shaving.jpg" alt="yak-shaving.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-orge554dad">
+<h3 id="orge554dad">Multiple payload options</h3>
+</section>
+<section id="slide-org3a97e09">
+<h3 id="org3a97e09">SeaBIOS</h3>
+<p>
+Minimal legacy BIOS
+</p>
+</section>
+<section id="slide-org33e0533">
+<h3 id="org33e0533">Bake Linux into your BIOS!</h3>
+<p>
+2017: The year of Linux on the (laptop) BIOS
+</p>
+</section>
+<section id="slide-org6771922">
+<h3 id="org6771922">GRUB2</h3>
+<p>
+Perma-GRUB
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org3dbefad">
+<h2 id="org3dbefad">Freedom</h2>
+<div class="outline-text-2" id="text-org3dbefad">
+</div></section>
+<section id="slide-org11531e1">
+<h3 id="org11531e1">Greater control over the software you run</h3>
+</section>
+<section id="slide-org2af64ae">
+<h3 id="org2af64ae">The 4 freedoms for your BIOS</h3>
+<ul>
+<li>to run the program as you wish, for any purpose</li>
+<li>to study how the program works</li>
+<li>to redistribute copies so you can help your neighbor</li>
+<li>to distribute copies of your modified versions to others</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org91edceb">
+<h2 id="org91edceb">That's cool! What do I need?</h2>
+<div class="outline-text-2" id="text-org91edceb">
+</div></section>
+<section id="slide-org9f99f28">
+<h3 id="org9f99f28">Prepare to void your warranty</h3>
+</section>
+<section id="slide-org689da76">
+<h3 id="org689da76">Get some old thinkpad hardware</h3>
+<p>
+Thinkpad X200, X201, X220, X230 all have great support 
+</p>
+</section>
+<section id="slide-org0693d72">
+<h3 id="org0693d72">A Pomona clip</h3>
+
+<div class="figure">
+<p><img src="./clip.jpg" alt="clip.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-orgcb4d28d">
+<h3 id="orgcb4d28d">Some SPI flashing hardware</h3>
+<p>
+I've used a BusPirate successfully, others have tried raspberry pis, beaglebones
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgf8a9132">
+<h2 id="orgf8a9132">Caveats</h2>
+<div class="outline-text-2" id="text-orgf8a9132">
+</div></section>
+<section id="slide-orgd542ef8">
+<h3 id="orgd542ef8">It's super finicky</h3>
+<p>
+This took me 3 days to get working
+</p>
+</section>
+<section id="slide-orgeb727ea">
+<h3 id="orgeb727ea">Make the wires shorter</h3>
+<p>
+Anything over 6 inches between chip &amp; SPI flasher will cause issues w/ interference
+</p>
+</section>
+<section id="slide-org7245cf9">
+<h3 id="org7245cf9">Make the wires shorter again</h3>
+<p>
+Seriously, it's super important
+</p>
+</section>
+<section id="slide-orgdbdc75f">
+<h3 id="orgdbdc75f">Buy a power supply</h3>
+<p>
+The EEPROM needs power, and your 3.3V supply from the Pi or Beaglebone is unlikely to be enough
+</p>
+</section>
+<section id="slide-org6b7d9ba">
+<h3 id="org6b7d9ba">&#x2026; or use WoL trickery</h3>
+<ul>
+<li class="fragment appear">Take the battery out</li>
+<li class="fragment appear">Plug in the AC adapter</li>
+<li class="fragment appear">Boot the machine and power it off</li>
+<li class="fragment appear">Plug in a connected (link) ethernet cable</li>
+<li class="fragment appear">Observe that the link light blinks &amp; the board is powered!</li>
+<li class="fragment appear">Don't ever connect the 3.3V source <b>and</b> the AC adapter at the same time</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org011363b">
+<h2 id="org011363b">Bonus round: Control the big bad ME!</h2>
+<div class="outline-text-2" id="text-org011363b">
+</div></section>
+<section id="slide-orgbaa9c8c">
+<h3 id="orgbaa9c8c">The Intel ME</h3>
+<p>
+An entirely separte co-processor within your CPU that you don't control.
+</p>
+</section>
+<section id="slide-org5416f64">
+<h3 id="org5416f64">The bad</h3>
+<p>
+Has Direct Memory Access, its own network interface and much much more
+</p>
+</section>
+<section id="slide-org65380dd">
+<h3 id="org65380dd">The ugly</h3>
+<ul>
+<li class="fragment appear">Has vulnerabilities!</li>
+<li class="fragment appear">Answers to Intel only</li>
+<li class="fragment appear">Since the SandyBridge generation ME also required for CPU initialization</li>
+<li class="fragment appear">Without a functioning ME your machine will shutdown after 30 minutes</li>
+<li class="fragment appear">You can't just zero it out</li>
+
+</ul>
+</section>
+<section id="slide-orgfea4a13">
+<h3 id="orgfea4a13">The free</h3>
+
+<div class="figure">
+<p><img src="./me-free.png" alt="me-free.png" />
+</p>
+</div>
+</section>
+<section id="slide-orga9be306">
+<h3 id="orga9be306">Sweet liberation</h3>
+
+<div class="figure">
+<p><img src="./me-cleaner.png" alt="me-cleaner.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orged6b7c9">
+<h2 id="orged6b7c9">Next steps: heads</h2>
+<div class="outline-text-2" id="text-orged6b7c9">
+</div></section>
+<section id="slide-org6159f89">
+<h3 id="org6159f89">a minimal Linux based payload that provides a secure, flexible boot environment</h3>
+<div class="outline-text-3" id="text-org6159f89">
+</div></section>
+<section id="slide-org17b9932">
+<h4 id="org17b9932">github.com/osresearch/heads</h4>
+</section>
+<section id="slide-orgfb28e15">
+<h3 id="orgfb28e15">Watch the talk</h3>
+
+<div class="figure">
+<p><img src="./heads-talk.png" alt="heads-talk.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
